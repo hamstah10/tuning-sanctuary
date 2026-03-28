@@ -135,7 +135,7 @@ Das Skript führt folgende Schritte automatisch aus:
 
 1. Erstellt den Produktions-Build (`npm run build`)
 2. Löscht alte SPA-Assets im Symfony-Projekt
-3. Kopiert die neuen Build-Artefakte nach `public/build/spa/`
+3. Kopiert die neuen Build-Artefakte nach `public/assets/portals/chiptuningfile/react_website/tuning-sanctuary/`
 4. Leert den Symfony-Cache
 
 ### 5. Cache manuell leeren

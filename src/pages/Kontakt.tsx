@@ -83,6 +83,7 @@ const KontaktPage = () => {
                 {[
                   { icon: Mail, label: "E-Mail", value: "andre@dyno-tuningfiles.de" },
                   { icon: Phone, label: "Telefon", value: "+49 (0) 123 456 78" },
+                  { icon: Mail, label: "Website", value: "chiptuningfile.de" },
                   { icon: MapPin, label: "Standort", value: "Hauptstraße 231a, 98529 Suhl, Deutschland" },
                   { icon: Clock, label: "Öffnungszeiten", value: "Mo-Fr: 9:00 - 18:00 Uhr" },
                 ].map((item, i) => (

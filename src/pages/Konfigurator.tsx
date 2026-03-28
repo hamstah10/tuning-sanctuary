@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, RotateCcw, Car, Cog, Cpu, Zap, ChevronRight, CheckCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 
 type Brand = { name: string; models: Model[] };
 type Model = { name: string; engines: Engine[] };

@@ -74,8 +74,8 @@ const Index = () => {
             transition={{ duration: 0.7 }}
             className="max-w-2xl"
           >
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
-              <span className="w-2 h-2 rounded-full bg-primary" />
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-primary" />
               Professionelles Chiptuning
             </span>
 
@@ -188,12 +188,12 @@ const Index = () => {
               >
                 <Link
                   to="/services"
-                  className="block p-6 rounded-xl bg-gradient-card border border-border hover:border-primary/40 transition-all group shadow-card"
+                  className="block p-6 bg-gradient-card border border-border hover:border-primary/40 transition-all group shadow-card"
                 >
                   <service.icon className="w-8 h-8 text-primary mb-4" />
                   <h3 className="font-display font-semibold text-lg mb-2">{service.title}</h3>
                   <p className="text-muted-foreground text-sm mb-4">{service.desc}</p>
-                  <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">
+                  <span className="inline-block px-3 py-1 text-xs font-medium bg-primary/10 text-primary">
                     {service.badge}
                   </span>
                 </Link>
@@ -239,7 +239,7 @@ const Index = () => {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeUp}
-                className="flex items-start gap-3 p-4 rounded-lg border border-border bg-background/50"
+                className="flex items-start gap-3 p-4 border border-border bg-background/50"
               >
                 <CheckCircle className="w-5 h-5 text-primary mt-0.5 shrink-0" />
                 <span className="text-sm font-medium">{item}</span>
@@ -252,7 +252,7 @@ const Index = () => {
       {/* CTA */}
       <section className="py-20">
         <div className="container">
-          <div className="rounded-2xl bg-gradient-hero p-12 text-center relative overflow-hidden">
+          <div className="bg-gradient-hero p-12 text-center relative overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,hsl(0_0%_100%/0.1),transparent_60%)]" />
             <div className="relative z-10">
               <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
@@ -309,7 +309,7 @@ const Index = () => {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeUp}
-                className="p-6 rounded-xl bg-gradient-card border border-border shadow-card"
+                className="p-6 bg-gradient-card border border-border shadow-card"
               >
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, j) => (

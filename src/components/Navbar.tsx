@@ -89,7 +89,7 @@ const Navbar = () => {
                 </Link>
               ))}
               <Button size="sm" className="bg-gradient-hero mt-2" asChild>
-                <Link to="/services" onClick={() => setMobileOpen(false)}>
+                <Link to="/konfigurator" onClick={() => setMobileOpen(false)}>
                   Jetzt konfigurieren
                 </Link>
               </Button>

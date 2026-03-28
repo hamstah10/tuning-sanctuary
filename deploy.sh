@@ -27,7 +27,7 @@ if [ ! -d "$SYMFONY_DIR" ]; then
   exit 1
 fi
 
-TARGET_DIR="$SYMFONY_DIR/public/build/spa"
+TARGET_DIR="$SYMFONY_DIR/public/assets/portals/chiptuningfile/react_website/tuning-sanctuary"
 
 echo "🔨 Starte Produktions-Build..."
 npm run build

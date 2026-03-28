@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: mode === "production" ? "/build/spa/" : "/",
+  base: mode === "production" ? "/assets/portals/chiptuningfile/react_website/tuning-sanctuary/" : "/",
   server: {
     host: "::",
     port: 8080,

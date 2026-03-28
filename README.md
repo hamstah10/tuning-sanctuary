@@ -39,16 +39,16 @@ VITE_API_BASE_URL=https://api.chiptuningfile.de
 npm run build
 ```
 
-Die kompilierten Dateien landen in `dist/`. Der Base-Path ist auf `/build/spa/` gesetzt, passend zur Symfony-Integration.
+Die kompilierten Dateien landen in `dist/`. Der Base-Path ist auf `/assets/portals/chiptuningfile/react_website/tuning-sanctuary/` gesetzt, passend zur Symfony-Integration.
 
 ## Symfony-Integration
 
 ### 1. Assets kopieren
 
-Den Inhalt von `dist/` nach `public/build/spa/` im Symfony-Projekt kopieren:
+Den Inhalt von `dist/` nach `public/assets/portals/chiptuningfile/react_website/tuning-sanctuary/` im Symfony-Projekt kopieren:
 
 ```bash
-cp -r dist/* /pfad/zum/symfony-projekt/public/build/spa/
+cp -r dist/* /pfad/zum/symfony-projekt/public/assets/portals/chiptuningfile/react_website/tuning-sanctuary/
 ```
 
 ### 2. Twig-Template anlegen
@@ -62,11 +62,11 @@ Erstelle `templates/spa.html.twig`:
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ChiptuningFile.de</title>
-    <link rel="stylesheet" href="{{ asset('build/spa/assets/' ~ spa_css) }}" />
+    <link rel="stylesheet" href="{{ asset('assets/portals/chiptuningfile/react_website/tuning-sanctuary/assets/' ~ spa_css) }}" />
 </head>
 <body>
     <div id="root"></div>
-    <script type="module" src="{{ asset('build/spa/assets/' ~ spa_js) }}"></script>
+    <script type="module" src="{{ asset('assets/portals/chiptuningfile/react_website/tuning-sanctuary/assets/' ~ spa_js) }}"></script>
 </body>
 </html>
 ```
@@ -91,7 +91,7 @@ class SpaController extends AbstractController
     #[Route('/{path}', name: 'spa_catchall', requirements: ['path' => '.*'], priority: -1)]
     public function index(): Response
     {
-        $assetsDir = $this->getParameter('kernel.project_dir') . '/public/build/spa/assets/';
+        $assetsDir = $this->getParameter('kernel.project_dir') . '/public/assets/portals/chiptuningfile/react_website/tuning-sanctuary/assets/';
         $files = scandir($assetsDir);
 
         $jsFile = '';
@@ -135,7 +135,7 @@ Das Skript führt folgende Schritte automatisch aus:
 
 1. Erstellt den Produktions-Build (`npm run build`)
 2. Löscht alte SPA-Assets im Symfony-Projekt
-3. Kopiert die neuen Build-Artefakte nach `public/build/spa/`
+3. Kopiert die neuen Build-Artefakte nach `public/assets/portals/chiptuningfile/react_website/tuning-sanctuary/`
 4. Leert den Symfony-Cache
 
 ### 5. Cache manuell leeren

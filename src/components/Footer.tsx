@@ -66,8 +66,8 @@ const Footer = () => {
             © {new Date().getFullYear()} Chiptuningfile.de – Alle Rechte vorbehalten.
           </p>
           <div className="flex gap-4 text-xs text-muted-foreground">
-            <Link to="/kontakt" className="hover:text-foreground transition-colors">Impressum</Link>
-            <Link to="/kontakt" className="hover:text-foreground transition-colors">Datenschutz</Link>
+            <Link to="/impressum" className="hover:text-foreground transition-colors">Impressum</Link>
+            <Link to="/datenschutz" className="hover:text-foreground transition-colors">Datenschutz</Link>
           </div>
         </div>
       </div>

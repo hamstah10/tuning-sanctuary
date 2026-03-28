@@ -91,7 +91,7 @@ const Index = () => {
 
             <div className="flex flex-wrap gap-4 mb-10">
               <Button size="lg" className="bg-gradient-hero hover:opacity-90 gap-2" asChild>
-                <Link to="/services">
+                <Link to="/konfigurator">
                   Konfigurator starten <ArrowRight className="w-4 h-4" />
                 </Link>
               </Button>
@@ -261,7 +261,7 @@ const Index = () => {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button size="lg" variant="secondary" className="gap-2" asChild>
-                  <Link to="/services">Konfigurator starten <ArrowRight className="w-4 h-4" /></Link>
+                  <Link to="/konfigurator">Konfigurator starten <ArrowRight className="w-4 h-4" /></Link>
                 </Button>
                 <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 gap-2" asChild>
                   <Link to="/kontakt">Kontakt aufnehmen</Link>

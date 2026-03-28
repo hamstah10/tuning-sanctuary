@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { label: "Home", path: "/" },
+  { label: "Konfigurator", path: "/konfigurator" },
   { label: "Services", path: "/services" },
   { label: "Preisliste", path: "/preisliste" },
   { label: "FAQ", path: "/faq" },
@@ -52,7 +53,7 @@ const Navbar = () => {
             <Link to="/kontakt">Händlerbereich</Link>
           </Button>
           <Button size="sm" className="bg-gradient-hero hover:opacity-90" asChild>
-            <Link to="/services">Jetzt konfigurieren</Link>
+            <Link to="/konfigurator">Jetzt konfigurieren</Link>
           </Button>
         </div>
 
@@ -88,7 +89,7 @@ const Navbar = () => {
                 </Link>
               ))}
               <Button size="sm" className="bg-gradient-hero mt-2" asChild>
-                <Link to="/services" onClick={() => setMobileOpen(false)}>
+                <Link to="/konfigurator" onClick={() => setMobileOpen(false)}>
                   Jetzt konfigurieren
                 </Link>
               </Button>

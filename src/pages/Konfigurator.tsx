@@ -161,7 +161,7 @@ const KonfiguratorPage = () => {
                 <div key={i} className="flex items-center gap-2 md:gap-4">
                   <div className="flex flex-col items-center gap-1">
                     <div
-                      className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all ${
+                      className={`w-12 h-12 flex items-center justify-center transition-all ${
                         active
                           ? "bg-gradient-hero shadow-glow"
                           : done
@@ -192,7 +192,7 @@ const KonfiguratorPage = () => {
       {/* Content */}
       <section className="py-8 pb-20">
         <div className="container max-w-4xl">
-          <div className="rounded-2xl border border-border bg-card shadow-card p-8">
+          <div className="border border-border bg-card shadow-card p-8">
             {/* Nav */}
             <div className="flex items-center justify-between mb-6">
               <button
@@ -219,7 +219,7 @@ const KonfiguratorPage = () => {
                       <button
                         key={b.name}
                         onClick={() => selectBrand(b)}
-                        className="flex flex-col items-center gap-3 p-6 rounded-xl border border-border bg-background/50 hover:border-primary/40 hover:shadow-glow transition-all group"
+                        className="flex flex-col items-center gap-3 p-6 border border-border bg-background/50 hover:border-primary/40 hover:shadow-glow transition-all group"
                       >
                         <Car className="w-10 h-10 text-muted-foreground group-hover:text-primary transition-colors" />
                         <span className="font-medium text-sm">{b.name}</span>
@@ -238,7 +238,7 @@ const KonfiguratorPage = () => {
                       <button
                         key={m.name}
                         onClick={() => selectModel(m)}
-                        className="flex items-center gap-3 p-5 rounded-xl border border-border bg-background/50 hover:border-primary/40 hover:shadow-glow transition-all text-left group"
+                        className="flex items-center gap-3 p-5 border border-border bg-background/50 hover:border-primary/40 hover:shadow-glow transition-all text-left group"
                       >
                         <Cog className="w-8 h-8 text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
                         <div>
@@ -262,7 +262,7 @@ const KonfiguratorPage = () => {
                       <button
                         key={e.name}
                         onClick={() => selectEngine(e)}
-                        className="flex items-center gap-3 p-5 rounded-xl border border-border bg-background/50 hover:border-primary/40 hover:shadow-glow transition-all text-left group"
+                        className="flex items-center gap-3 p-5 border border-border bg-background/50 hover:border-primary/40 hover:shadow-glow transition-all text-left group"
                       >
                         <Cpu className="w-8 h-8 text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
                         <div>
@@ -284,9 +284,9 @@ const KonfiguratorPage = () => {
 
                   <div className="grid md:grid-cols-2 gap-6">
                     {/* Stage 1 */}
-                    <div className="rounded-xl border border-border bg-background/50 p-6">
+                    <div className="border border-border bg-background/50 p-6">
                       <div className="flex items-center gap-2 mb-4">
-                        <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                        <div className="w-8 h-8 bg-primary/10 flex items-center justify-center">
                           <Zap className="w-4 h-4 text-primary" />
                         </div>
                         <div>
@@ -301,12 +301,12 @@ const KonfiguratorPage = () => {
                             <span className="text-muted-foreground">Leistung</span>
                             <span className="text-primary font-semibold">+{psDiff1} PS</span>
                           </div>
-                          <div className="h-2 rounded-full bg-muted overflow-hidden">
+                          <div className="h-2 bg-muted overflow-hidden">
                             <motion.div
                               initial={{ width: 0 }}
                               animate={{ width: `${(selectedEngine.stage1Ps / selectedEngine.stage2Ps) * 100}%` }}
                               transition={{ duration: 1, delay: 0.3 }}
-                              className="h-full rounded-full bg-gradient-hero"
+                              className="h-full bg-gradient-hero"
                             />
                           </div>
                           <div className="flex justify-between text-xs text-muted-foreground mt-1">
@@ -320,12 +320,12 @@ const KonfiguratorPage = () => {
                             <span className="text-muted-foreground">Drehmoment</span>
                             <span className="text-primary font-semibold">+{nmDiff1} Nm</span>
                           </div>
-                          <div className="h-2 rounded-full bg-muted overflow-hidden">
+                          <div className="h-2 bg-muted overflow-hidden">
                             <motion.div
                               initial={{ width: 0 }}
                               animate={{ width: `${(selectedEngine.stage1Nm / selectedEngine.stage2Nm) * 100}%` }}
                               transition={{ duration: 1, delay: 0.4 }}
-                              className="h-full rounded-full bg-gradient-hero"
+                              className="h-full bg-gradient-hero"
                             />
                           </div>
                           <div className="flex justify-between text-xs text-muted-foreground mt-1">
@@ -339,12 +339,12 @@ const KonfiguratorPage = () => {
                     </div>
 
                     {/* Stage 2 */}
-                    <div className="rounded-xl border border-primary/40 bg-background/50 p-6 shadow-glow relative">
-                      <span className="absolute -top-3 right-4 px-3 py-0.5 rounded-full bg-gradient-hero text-primary-foreground text-xs font-semibold">
+                    <div className="border border-primary/40 bg-background/50 p-6 shadow-glow relative">
+                      <span className="absolute -top-3 right-4 px-3 py-0.5 bg-gradient-hero text-primary-foreground text-xs font-semibold">
                         Empfohlen
                       </span>
                       <div className="flex items-center gap-2 mb-4">
-                        <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                        <div className="w-8 h-8 bg-primary/10 flex items-center justify-center">
                           <Zap className="w-4 h-4 text-primary" />
                         </div>
                         <div>
@@ -359,12 +359,12 @@ const KonfiguratorPage = () => {
                             <span className="text-muted-foreground">Leistung</span>
                             <span className="text-primary font-semibold">+{psDiff2} PS</span>
                           </div>
-                          <div className="h-2 rounded-full bg-muted overflow-hidden">
+                          <div className="h-2 bg-muted overflow-hidden">
                             <motion.div
                               initial={{ width: 0 }}
                               animate={{ width: "100%" }}
                               transition={{ duration: 1, delay: 0.3 }}
-                              className="h-full rounded-full bg-gradient-hero"
+                              className="h-full bg-gradient-hero"
                             />
                           </div>
                           <div className="flex justify-between text-xs text-muted-foreground mt-1">
@@ -378,12 +378,12 @@ const KonfiguratorPage = () => {
                             <span className="text-muted-foreground">Drehmoment</span>
                             <span className="text-primary font-semibold">+{nmDiff2} Nm</span>
                           </div>
-                          <div className="h-2 rounded-full bg-muted overflow-hidden">
+                          <div className="h-2 bg-muted overflow-hidden">
                             <motion.div
                               initial={{ width: 0 }}
                               animate={{ width: "100%" }}
                               transition={{ duration: 1, delay: 0.4 }}
-                              className="h-full rounded-full bg-gradient-hero"
+                              className="h-full bg-gradient-hero"
                             />
                           </div>
                           <div className="flex justify-between text-xs text-muted-foreground mt-1">

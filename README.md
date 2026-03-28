@@ -116,7 +116,31 @@ class SpaController extends AbstractController
 
 > **Wichtig:** Die Catch-all-Route hat `priority: -1`, damit Symfony-API-Routen Vorrang haben.
 
-### 4. Cache leeren
+### 4. Deploy-Skript verwenden
+
+Alternativ zu den manuellen Schritten 1 und 4 kann das mitgelieferte Deploy-Skript verwendet werden:
+
+```bash
+./deploy.sh /pfad/zum/symfony-projekt
+```
+
+Oder als Umgebungsvariable:
+
+```bash
+export SYMFONY_DIR=/pfad/zum/symfony-projekt
+./deploy.sh
+```
+
+Das Skript führt folgende Schritte automatisch aus:
+
+1. Erstellt den Produktions-Build (`npm run build`)
+2. Löscht alte SPA-Assets im Symfony-Projekt
+3. Kopiert die neuen Build-Artefakte nach `public/build/spa/`
+4. Leert den Symfony-Cache
+
+### 5. Cache manuell leeren
+
+Falls nicht über das Deploy-Skript:
 
 ```bash
 php bin/console cache:clear

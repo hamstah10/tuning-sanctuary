@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const faqs = [
@@ -36,6 +37,7 @@ const topics = [
 const FaqPage = () => {
   return (
     <Layout>
+      <SEO title="FAQ – Chiptuningfile.de" description="Häufig gestellte Fragen zu Chiptuning, Leistungsstufen und unserem Service." />
       <section className="py-20 pt-28">
         <div className="container text-center">
           <span className="text-primary text-sm font-medium tracking-widest uppercase">Häufig gestellte Fragen</span>

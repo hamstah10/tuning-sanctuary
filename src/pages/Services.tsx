@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Gauge, Wrench, Rocket, Flame, Wind, Zap, Volume2, Droplets } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -73,6 +74,7 @@ const additionalServices = [
 const ServicesPage = () => {
   return (
     <Layout>
+      <SEO title="Services – Chiptuningfile.de" description="Stage 1-3 Tuning, DPF, EGR, DSG Optimierung und mehr. Professionelles Chiptuning für alle Fahrzeuge." />
       {/* Hero */}
       <section className="py-20 pt-28">
         <div className="container text-center">

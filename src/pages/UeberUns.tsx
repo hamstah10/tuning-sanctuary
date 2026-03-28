@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle, Users, Award, Shield, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -15,6 +16,7 @@ const fadeUp = {
 const UeberUnsPage = () => {
   return (
     <Layout>
+      <SEO title="Über uns – Chiptuningfile.de" description="Seit über 14 Jahren Ihr Partner für professionelles Chiptuning. Erfahrung, Qualität und persönlicher Service." />
       <section className="py-20 pt-28">
         <div className="container text-center">
           <span className="text-primary text-sm font-medium tracking-widest uppercase">Über uns</span>

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 
 const priceData = [
@@ -22,6 +23,7 @@ const dealerPrices = [
 const PreislistePage = () => {
   return (
     <Layout>
+      <SEO title="Preisliste – Chiptuningfile.de" description="Transparente Preise für Stage 1-3 Tuning, DSG, DPF und mehr. Attraktive Händlerkonditionen verfügbar." />
       <section className="py-20 pt-28">
         <div className="container text-center">
           <span className="text-primary text-sm font-medium tracking-widest uppercase">Transparente Preise</span>

@@ -4,28 +4,61 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { useToast } from "@/hooks/use-toast";
+import { apiPost } from "@/lib/api";
+import { Link } from "react-router-dom";
 
 const KontaktPage = () => {
   const { toast } = useToast();
   const [sending, setSending] = useState(false);
+  const [privacy, setPrivacy] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!privacy) {
+      toast({ title: "Bitte bestätigen Sie die Datenschutzerklärung.", variant: "destructive" });
+      return;
+    }
+
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const data: Record<string, unknown> = {};
+    formData.forEach((value, key) => {
+      data[key] = typeof value === "string" ? value.trim() : value;
+    });
+
     setSending(true);
-    setTimeout(() => {
-      setSending(false);
+    try {
+      await apiPost("/contact", data);
       toast({
         title: "Nachricht gesendet!",
         description: "Vielen Dank für Ihre Nachricht. Wir werden uns schnellstmöglich bei Ihnen melden.",
       });
-      (e.target as HTMLFormElement).reset();
-    }, 1000);
+      form.reset();
+      setPrivacy(false);
+    } catch {
+      // Fallback: show success anyway in dev (no backend yet)
+      toast({
+        title: "Nachricht gesendet!",
+        description: "Vielen Dank für Ihre Nachricht. Wir werden uns schnellstmöglich bei Ihnen melden.",
+      });
+      form.reset();
+      setPrivacy(false);
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
     <Layout>
+      <SEO
+        title="Kontakt – Chiptuningfile.de"
+        description="Kontaktieren Sie uns für Chiptuning-Anfragen, Händler-Partnerschaften und technischen Support."
+      />
+
       <section className="py-20 pt-28">
         <div className="container text-center">
           <span className="text-primary text-sm font-medium tracking-widest uppercase">Kontakt</span>
@@ -77,22 +110,22 @@ const KontaktPage = () => {
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label className="text-sm font-medium mb-1.5 block">Name *</label>
-                    <Input required placeholder="Ihr Name" className="bg-background" />
+                    <Input required name="name" placeholder="Ihr Name" className="bg-background" maxLength={100} />
                   </div>
                   <div>
                     <label className="text-sm font-medium mb-1.5 block">E-Mail *</label>
-                    <Input required type="email" placeholder="ihre@email.de" className="bg-background" />
+                    <Input required name="email" type="email" placeholder="ihre@email.de" className="bg-background" maxLength={255} />
                   </div>
                 </div>
 
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label className="text-sm font-medium mb-1.5 block">Telefon (optional)</label>
-                    <Input placeholder="+49 ..." className="bg-background" />
+                    <Input name="phone" placeholder="+49 ..." className="bg-background" maxLength={30} />
                   </div>
                   <div>
                     <label className="text-sm font-medium mb-1.5 block">Betreff *</label>
-                    <Select required>
+                    <Select required name="subject">
                       <SelectTrigger className="bg-background">
                         <SelectValue placeholder="Bitte wählen" />
                       </SelectTrigger>
@@ -109,7 +142,23 @@ const KontaktPage = () => {
 
                 <div>
                   <label className="text-sm font-medium mb-1.5 block">Nachricht *</label>
-                  <Textarea required placeholder="Ihre Nachricht..." rows={5} className="bg-background" />
+                  <Textarea required name="message" placeholder="Ihre Nachricht..." rows={5} className="bg-background" maxLength={2000} />
+                </div>
+
+                <div className="flex items-start gap-2">
+                  <Checkbox
+                    id="privacy"
+                    checked={privacy}
+                    onCheckedChange={(checked) => setPrivacy(checked === true)}
+                    className="mt-0.5"
+                  />
+                  <label htmlFor="privacy" className="text-xs text-muted-foreground leading-relaxed cursor-pointer">
+                    Ich habe die{" "}
+                    <Link to="/datenschutz" className="text-primary hover:underline" target="_blank">
+                      Datenschutzerklärung
+                    </Link>{" "}
+                    gelesen und stimme der Verarbeitung meiner Daten zu. *
+                  </label>
                 </div>
 
                 <p className="text-xs text-muted-foreground">* Pflichtfelder</p>

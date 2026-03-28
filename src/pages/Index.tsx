@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Shield, Award, CheckCircle, Star, Gauge, Wrench, Cog } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import heroCar from "@/assets/hero-car.jpg";
 import { useEffect, useRef, useState } from "react";
 
@@ -52,6 +53,7 @@ const Index = () => {
 
   return (
     <Layout>
+      <SEO title="Chiptuningfile.de – Professionelles Chiptuning seit über 14 Jahren" description="Seit über 14 Jahren optimieren wir Datenstände für PKW, LKW und Nutzfahrzeuge. Stage 1-3 Tuning mit Prüfstand-getesteten Files." />
       {/* Hero */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">

@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, RotateCcw, Car, Cog, Cpu, Zap, ChevronRight, CheckCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 
 type Brand = { name: string; models: Model[] };
 type Model = { name: string; engines: Engine[] };
@@ -135,6 +136,7 @@ const KonfiguratorPage = () => {
 
   return (
     <Layout>
+      <SEO title="Konfigurator – Chiptuningfile.de" description="Finden Sie Ihr Tuning-Potential. Wählen Sie Marke, Modell und Motor für eine individuelle Leistungssteigerung." />
       {/* Header */}
       <section className="py-16 pt-28">
         <div className="container text-center">

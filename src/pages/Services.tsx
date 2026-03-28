@@ -188,7 +188,7 @@ const ServicesPage = () => {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button size="lg" className="bg-gradient-hero hover:opacity-90 gap-2" asChild>
-              <Link to="/kontakt">Konfigurator starten <ArrowRight className="w-4 h-4" /></Link>
+              <Link to="/konfigurator">Konfigurator starten <ArrowRight className="w-4 h-4" /></Link>
             </Button>
             <Button size="lg" variant="outline" className="gap-2" asChild>
               <Link to="/kontakt">Kontakt aufnehmen</Link>

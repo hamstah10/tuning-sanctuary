@@ -105,7 +105,7 @@ const FaqPage = () => {
               <Link to="/kontakt">Kontakt aufnehmen <ArrowRight className="w-4 h-4" /></Link>
             </Button>
             <Button size="lg" variant="outline" className="gap-2" asChild>
-              <Link to="/services">Konfigurator starten</Link>
+              <Link to="/konfigurator">Konfigurator starten</Link>
             </Button>
           </div>
         </div>

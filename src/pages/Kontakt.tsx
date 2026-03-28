@@ -86,7 +86,7 @@ const KontaktPage = () => {
                   { icon: MapPin, label: "Standort", value: "Hauptstraße 231a, 98529 Suhl, Deutschland" },
                   { icon: Clock, label: "Öffnungszeiten", value: "Mo-Fr: 9:00 - 18:00 Uhr" },
                 ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-3 p-4 rounded-lg border border-border bg-card">
+                  <div key={i} className="flex items-start gap-3 p-4 border border-border bg-card">
                     <item.icon className="w-5 h-5 text-primary mt-0.5 shrink-0" />
                     <div>
                       <div className="text-xs text-muted-foreground">{item.label}</div>
@@ -96,7 +96,7 @@ const KontaktPage = () => {
                 ))}
               </div>
 
-              <div className="p-4 rounded-lg border border-primary/20 bg-primary/5">
+              <div className="p-4 border border-primary/20 bg-primary/5">
                 <div className="text-sm font-medium text-primary mb-1">Schnelle Antwort</div>
                 <div className="text-xs text-muted-foreground">
                   Wir antworten in der Regel innerhalb von 24 Stunden auf alle Anfragen.
@@ -106,7 +106,7 @@ const KontaktPage = () => {
 
             {/* Form */}
             <div className="lg:col-span-3">
-              <form onSubmit={handleSubmit} className="p-8 rounded-2xl border border-border bg-card shadow-card space-y-5">
+              <form onSubmit={handleSubmit} className="p-8 border border-border bg-card shadow-card space-y-5">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label className="text-sm font-medium mb-1.5 block">Name *</label>

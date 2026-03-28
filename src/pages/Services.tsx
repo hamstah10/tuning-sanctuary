@@ -89,7 +89,7 @@ const ServicesPage = () => {
 
           <div className="flex flex-wrap justify-center gap-3 mt-8">
             {["PKW Benziner", "PKW Diesel", "LKW / Transporter", "Motorräder", "Agrar / Baumaschinen", "Busse"].map((cat) => (
-              <span key={cat} className="px-4 py-2 rounded-full text-sm border border-border bg-card hover:border-primary/40 transition-colors cursor-default">
+              <span key={cat} className="px-4 py-2 text-sm border border-border bg-card hover:border-primary/40 transition-colors cursor-default">
                 {cat}
               </span>
             ))}
@@ -114,12 +114,12 @@ const ServicesPage = () => {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeUp}
-                className={`rounded-2xl p-8 border bg-gradient-card shadow-card relative ${
+                className={`p-8 border bg-gradient-card shadow-card relative ${
                   stage.popular ? "border-primary shadow-glow" : "border-border"
                 }`}
               >
                 {stage.popular && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-hero text-primary-foreground text-xs font-semibold">
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-hero text-primary-foreground text-xs font-semibold">
                     Beliebt
                   </span>
                 )}
@@ -136,7 +136,7 @@ const ServicesPage = () => {
                 <ul className="space-y-2 mb-6">
                   {stage.features.map((f, j) => (
                     <li key={j} className="flex items-center gap-2 text-sm">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                      <span className="w-1.5 h-1.5 bg-primary" />
                       {f}
                     </li>
                   ))}
@@ -168,13 +168,13 @@ const ServicesPage = () => {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeUp}
-                className="p-6 rounded-xl border border-border bg-background/50 hover:border-primary/30 transition-all"
+                className="p-6 border border-border bg-background/50 hover:border-primary/30 transition-all"
               >
                 <s.icon className="w-6 h-6 text-primary mb-3" />
                 <div className="text-lg font-bold text-gradient mb-1">{s.price}</div>
                 <h3 className="font-display font-semibold mb-2">{s.title}</h3>
                 <p className="text-sm text-muted-foreground mb-3">{s.desc}</p>
-                <span className="text-xs px-2 py-1 rounded bg-primary/10 text-primary">{s.note}</span>
+                <span className="text-xs px-2 py-1 bg-primary/10 text-primary">{s.note}</span>
               </motion.div>
             ))}
           </div>

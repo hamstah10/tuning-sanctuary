@@ -53,7 +53,7 @@ const Navbar = () => {
             <Link to="/kontakt">Händlerbereich</Link>
           </Button>
           <Button size="sm" className="bg-gradient-hero hover:opacity-90" asChild>
-            <Link to="/services">Jetzt konfigurieren</Link>
+            <Link to="/konfigurator">Jetzt konfigurieren</Link>
           </Button>
         </div>
 

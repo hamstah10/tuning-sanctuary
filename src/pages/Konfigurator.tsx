@@ -136,6 +136,7 @@ const KonfiguratorPage = () => {
 
   return (
     <Layout>
+      <SEO title="Konfigurator – Chiptuningfile.de" description="Finden Sie Ihr Tuning-Potential. Wählen Sie Marke, Modell und Motor für eine individuelle Leistungssteigerung." />
       {/* Header */}
       <section className="py-16 pt-28">
         <div className="container text-center">

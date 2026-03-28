@@ -39,7 +39,7 @@ const PreislistePage = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="overflow-x-auto rounded-xl border border-border shadow-card"
+            className="overflow-x-auto border border-border shadow-card"
           >
             <table className="w-full text-sm">
               <thead>
@@ -87,7 +87,7 @@ const PreislistePage = () => {
 
           <div className="grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto mb-10">
             {dealerPrices.map((d, i) => (
-              <div key={i} className="p-6 rounded-xl border border-border bg-background/50 text-center">
+              <div key={i} className="p-6 border border-border bg-background/50 text-center">
                 <div className="text-sm text-muted-foreground mb-1">{d.label}</div>
                 <div className="text-lg text-muted-foreground line-through">{d.original}</div>
                 <div className="text-2xl font-bold text-gradient">{d.dealer}</div>
@@ -97,7 +97,7 @@ const PreislistePage = () => {
 
           <div className="flex flex-wrap justify-center gap-3 text-sm text-muted-foreground mb-8">
             {["Vergünstigte Händlerpreise", "Flexibles Credit-System", "Schnelle Bearbeitung (30-60 Min)", "Persönlicher Ansprechpartner", "Zugang zum File-Service-Portal"].map((item) => (
-              <span key={item} className="px-3 py-1.5 rounded-full border border-border bg-card">
+              <span key={item} className="px-3 py-1.5 border border-border bg-card">
                 {item}
               </span>
             ))}

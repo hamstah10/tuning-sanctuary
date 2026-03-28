@@ -49,11 +49,11 @@ const Navbar = () => {
         </div>
 
         <div className="hidden lg:flex items-center gap-3">
-          <Button variant="outline" size="sm" asChild>
-            <Link to="/haendlerbereich">Händlerbereich</Link>
+          <Button size="sm" className="bg-gradient-hero hover:opacity-90 gap-2" asChild>
+            <Link to="/haendlerbereich"><ShieldCheck className="w-4 h-4" /> Händlerbereich</Link>
           </Button>
-          <Button size="sm" className="bg-gradient-hero hover:opacity-90" asChild>
-            <Link to="/konfigurator">Jetzt konfigurieren</Link>
+          <Button size="sm" className="bg-gradient-hero hover:opacity-90 gap-2" asChild>
+            <Link to="/konfigurator"><Settings className="w-4 h-4" /> Jetzt konfigurieren</Link>
           </Button>
         </div>
 

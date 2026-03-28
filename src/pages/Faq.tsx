@@ -55,7 +55,7 @@ const FaqPage = () => {
               <AccordionItem
                 key={i}
                 value={`faq-${i}`}
-                className="rounded-xl border border-border bg-card px-6 data-[state=open]:border-primary/30"
+                className="border border-border bg-card px-6 data-[state=open]:border-primary/30"
               >
                 <AccordionTrigger className="text-left font-display font-semibold hover:no-underline">
                   {faq.q}
@@ -79,12 +79,12 @@ const FaqPage = () => {
 
           <div className="grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
             {topics.map((topic, i) => (
-              <div key={i} className="p-6 rounded-xl border border-border bg-background/50">
+              <div key={i} className="p-6 border border-border bg-background/50">
                 <h3 className="font-display font-semibold text-lg mb-3">{topic.title}</h3>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   {topic.items.map((item, j) => (
                     <li key={j} className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                      <span className="w-1.5 h-1.5 bg-primary" />
                       {item}
                     </li>
                   ))}

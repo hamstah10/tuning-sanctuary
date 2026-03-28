@@ -50,7 +50,7 @@ const Navbar = () => {
 
         <div className="hidden lg:flex items-center gap-3">
           <Button variant="outline" size="sm" asChild>
-            <Link to="/kontakt">Händlerbereich</Link>
+            <Link to="/haendlerbereich">Händlerbereich</Link>
           </Button>
           <Button size="sm" className="bg-gradient-hero hover:opacity-90" asChild>
             <Link to="/konfigurator">Jetzt konfigurieren</Link>

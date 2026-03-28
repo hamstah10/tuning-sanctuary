@@ -13,6 +13,7 @@ import UeberUns from "./pages/UeberUns.tsx";
 import Kontakt from "./pages/Kontakt.tsx";
 import Impressum from "./pages/Impressum.tsx";
 import Datenschutz from "./pages/Datenschutz.tsx";
+import Haendlerbereich from "./pages/Haendlerbereich.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,7 @@ const App = () => (
             <Route path="/kontakt" element={<Kontakt />} />
             <Route path="/impressum" element={<Impressum />} />
             <Route path="/datenschutz" element={<Datenschutz />} />
+            <Route path="/haendlerbereich" element={<Haendlerbereich />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
